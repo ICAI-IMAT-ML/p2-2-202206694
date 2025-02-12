@@ -318,7 +318,6 @@ def plot_calibration_curve(y_true, y_probs, positive_label, n_bins=10):
         if bin_mask.any():
             true_proportions[i] = np.mean(y_true_mapped[bin_mask])
 
-    # Plotting the calibration curve
     plt.figure(figsize=(8, 6))
     plt.plot(bin_centers, true_proportions, marker='o', linestyle='-', label='Calibration Curve')
     plt.plot([0, 1], [0, 1], linestyle='--', color='gray', label='Perfect Calibration')
